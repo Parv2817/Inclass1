@@ -21,13 +21,13 @@ public class CardTrick {
             Card c = new Card();
             Random rand = new Random();
             c.setValue(rand.nextInt(13) + 1); 
-            c.setSuit(Card.SUITS[rand.nextInt(4)]); // 
+            c.setSuit(Card.SUITS[rand.nextInt(4)]); 
             hand[i] = c;
         }
 
         Card luckyCard = new Card();
         luckyCard.setValue(2);
-        luckyCard.setSuit(Card.SUITS[0]); // Clubs
+        luckyCard.setSuit(Card.SUITS[0]);
         hand[0] = luckyCard;
 
         Scanner scanner = new Scanner(System.in);
@@ -48,7 +48,7 @@ public class CardTrick {
         }
 
         if (found) {
-            System.out.println("Congratulations! Your card is in the magic hand.");
+            printInfo();
         } else {
             System.out.println("Sorry, your card is not in the magic hand.");
         }
