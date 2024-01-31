@@ -15,20 +15,20 @@ import java.util.Scanner;
 public class CardTrick {
 
     public static void main(String[] args) {
-        Card[] magicHand = new Card[7];
+        Card[] hand = new Card[7];
 
-        for (int i = 0; i < magicHand.length; i++) {
+        for (int i = 0; i < hand.length; i++) {
             Card c = new Card();
             Random rand = new Random();
             c.setValue(rand.nextInt(13) + 1); 
             c.setSuit(Card.SUITS[rand.nextInt(4)]); // 
-            magicHand[i] = c;
+            hand[i] = c;
         }
 
         Card luckyCard = new Card();
         luckyCard.setValue(2);
         luckyCard.setSuit(Card.SUITS[0]); // Clubs
-        magicHand[0] = luckyCard;
+        hand[0] = luckyCard;
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Pick a card (enter value and suit): ");
@@ -40,7 +40,7 @@ public class CardTrick {
         userCard.setSuit(userSuit);
 
         boolean found = false;
-        for (Card card : magicHand) {
+        for (Card card : hand) {
             if (card.equals(userCard)) {
                 found = true;
                 break;
